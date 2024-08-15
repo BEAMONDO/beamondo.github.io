@@ -25,17 +25,34 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', () => {
         overlay.classList.remove('show');
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Maneja el cambio de idioma
     const languageSelect = document.getElementById('language-select');
-
     languageSelect.addEventListener('change', (event) => {
         const selectedLanguage = event.target.value;
-        const currentUrl = window.location.href;
-        const baseUrl = currentUrl.replace(/(\/es|\/en)/, '/');
-        const newUrl = baseUrl + '/' + selectedLanguage;
-
-        window.location.href = newUrl;
+        const targetPage = selectedLanguage === 'es' ? 'index_es.html' : 'index_en.html';
+        window.location.href = targetPage;
     });
 });
+
+function toggleConfig() {
+    var configSection = document.getElementById('config-section');
+    var messagesSection = document.getElementById('messages-section');
+    if (configSection.style.display === 'none' || configSection.style.display === '') {
+        configSection.style.display = 'block';
+        messagesSection.style.display = 'none';
+    } else {
+        configSection.style.display = 'none';
+    }
+}
+
+function toggleMessages() {
+    var configSection = document.getElementById('config-section');
+    var messagesSection = document.getElementById('messages-section');
+    if (messagesSection.style.display === 'none' || messagesSection.style.display === '') {
+        messagesSection.style.display = 'block';
+        configSection.style.display = 'none';
+    } else {
+        messagesSection.style.display = 'none';
+    }
+}

@@ -10,12 +10,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #1f1f1f;
     color: #333;
 }
 
 header {
-    background-color: #007BFF;
+    background-color: #3d3d3d;
     color: white;
     padding: 15px;
     text-align: center;
@@ -26,11 +26,19 @@ header {
     position: absolute;
     top: 10px;
     right: 20px;
+    font-weight: bold;
 }
 
 .language-selector select {
     padding: 5px;
     font-size: 14px;
+}
+
+.theme-switch{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-weight: bold;
 }
 
 main {
@@ -52,8 +60,8 @@ main {
 }
 
 .plugin-item {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #1e1e1e;
+    border: 1px solid #333;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: calc(33% - 40px); /* Ajuste para que 3 plugins quepan en la fila */
@@ -69,19 +77,22 @@ main {
 }
 
 .plugin-item img {
-    max-width: 80px;
+    max-width: 30%;
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .plugin-item h2 {
     font-size: 18px;
     margin-bottom: 10px;
+    color: white;
 }
 
 .plugin-item p {
     font-size: 14px;
     margin: 5px 0;
-    color: #555;
+    color: #b0b0b0;
 }
 
 .plugin-item a.download-link {
@@ -104,11 +115,12 @@ main {
 }
 
 .plugin-details {
-    width: 20%;
-    background-color: #e0e0e0;
+    width: 18%;
+    background-color: #292929;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
+    color: white;
 }
 
 .plugin-details img.image-resize {
@@ -139,7 +151,7 @@ main {
 .plugin-description {
     margin-left: 20px;
     margin-right: 20px;
-    width: 80%;
+    width: 82%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
@@ -147,6 +159,7 @@ main {
     justify-content: center;
     align-items: flex-start; /* Cambiado a flex-start para alinear los elementos a la izquierda */
     text-align: left; /* Cambiado para que el texto esté alineado a la izquierda */
+    color: white;
 }
 
 .plugin-description h1 {
@@ -167,7 +180,7 @@ main {
 .plugin-description img {
     max-width: 80%;
     height: auto;
-    margin-top: 20px;
+    margin-top: 0px;
     display: block; /* Asegura que la imagen sea un bloque y no se alinee en línea */
     margin-left: auto; /* Margen izquierdo automático para centrar */
     margin-right: auto; /* Margen derecho automático para centrar */
@@ -195,7 +208,7 @@ main {
 }
 
 footer {
-    background-color: #333;
+    background-color: #3d3d3d;
     color: white;
     padding: 10px;
     text-align: center;
@@ -206,13 +219,13 @@ footer {
 }
 
 a {
-    color: #007BFF;
+    color: #bb86fc;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 a:hover {
-    color: #0056b3;
+    color: #8a2be2;
 }
 
 /* Estilos para pantallas más pequeñas */
@@ -259,4 +272,27 @@ a:hover {
 
 .overlay.show {
     display: flex;
+}
+
+.config-section, .messages-section {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
+.config-button, .messages-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d400ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.config-button:hover, .messages-button:hover {
+    background-color: #8500a0;
 }
