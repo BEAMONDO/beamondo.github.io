@@ -26,3 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.remove('show');
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const languageSelect = document.getElementById('language-select');
+
+    languageSelect.addEventListener('change', (event) => {
+        const selectedLanguage = event.target.value;
+        const currentUrl = window.location.href;
+        const baseUrl = currentUrl.replace(/(\/es|\/en)/, '/');
+        const newUrl = baseUrl + '/' + selectedLanguage;
+
+        window.location.href = newUrl;
+    });
+});

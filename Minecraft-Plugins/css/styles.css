@@ -22,6 +22,17 @@ header {
     font-size: 24px;
 }
 
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.language-selector select {
+    padding: 5px;
+    font-size: 14px;
+}
+
 main {
     padding: 20px;
     min-height: calc(100vh - 60px - 50px); /* Ajusta la altura mínima del contenido */
@@ -32,6 +43,12 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 20px;
+}
+
+.plugin-container-plugin {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
 }
 
 .plugin-item {
@@ -84,6 +101,76 @@ main {
 
 .plugin-item a.download-link[style*="grey"] {
     pointer-events: none; /* Desactiva clics si no está disponible */
+}
+
+.plugin-details {
+    width: 20%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.plugin-details img.image-resize {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.plugin-details a.download-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.plugin-details a.download-link:hover {
+    background-color: #218838;
+}
+
+.plugin-details a.download-link[style*="grey"] {
+    pointer-events: none; /* Desactiva clics si no está disponible */
+}
+
+.plugin-description {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Cambiado a flex-start para alinear los elementos a la izquierda */
+    text-align: left; /* Cambiado para que el texto esté alineado a la izquierda */
+}
+
+.plugin-description h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Reducir la separación entre los párrafos en .plugin-description */
+.plugin-description p {
+    font-size: 1.2em;
+    margin-bottom: 10px; /* Reduce la separación entre párrafos */
+    text-align: justify; /* Justifica el texto dentro de los párrafos */
+    max-width: 100%; /* Ajusta el ancho máximo del texto al contenedor */
+}
+
+/* Centrando la imagen en .plugin-description */
+.plugin-description img {
+    max-width: 80%;
+    height: auto;
+    margin-top: 20px;
+    display: block; /* Asegura que la imagen sea un bloque y no se alinee en línea */
+    margin-left: auto; /* Margen izquierdo automático para centrar */
+    margin-right: auto; /* Margen derecho automático para centrar */
 }
 
 .back-button {
