@@ -1,0 +1,175 @@
+/* Reset básico de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+}
+
+main {
+    padding: 20px;
+    min-height: calc(100vh - 60px - 50px); /* Ajusta la altura mínima del contenido */
+}
+
+.plugin-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.plugin-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33% - 40px); /* Ajuste para que 3 plugins quepan en la fila */
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.plugin-item:hover {
+    transform: translateY(-5px);
+}
+
+.plugin-item img {
+    max-width: 80px;
+    margin-bottom: 10px;
+}
+
+.plugin-item h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.plugin-item p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.plugin-item a.download-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.plugin-item a.download-link:hover {
+    background-color: #218838;
+}
+
+.plugin-item a.download-link[style*="grey"] {
+    pointer-events: none; /* Desactiva clics si no está disponible */
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+
+.plugin-details img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .plugin-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .plugin-item {
+        width: 100%;
+    }
+}
+
+/* Estilos para la imagen grande */
+.plugin-image-container {
+    position: relative;
+}
+
+.plugin-image-container img {
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    border: 5px solid white;
+}
+
+.overlay.show {
+    display: flex;
+}
