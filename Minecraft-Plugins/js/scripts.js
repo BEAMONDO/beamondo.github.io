@@ -56,3 +56,7 @@ function toggleMessages() {
         messagesSection.style.display = 'none';
     }
 }
+
+function goBack() {
+    window.history.back();
+}
