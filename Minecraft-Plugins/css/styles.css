@@ -59,7 +59,7 @@ main {
 
 .plugin-container-plugin {
     display: flex;
-    flex-direction: column; /* Change layout to column on mobile */
+    flex-grow: 1;
     padding: 20px;
 }
 
@@ -119,7 +119,7 @@ main {
 }
 
 .plugin-details {
-    width: 100%; /* Full width on mobile */
+    width: 18%;
     background-color: #292929;
     padding: 20px;
     box-sizing: border-box;
@@ -153,16 +153,16 @@ main {
 }
 
 .plugin-description {
-    margin-left: 0; /* Reset margin for mobile */
-    margin-right: 0; /* Reset margin for mobile */
-    width: 100%; /* Full width on mobile */
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 82%;
     padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+    align-items: flex-start; /* Cambiado a flex-start para alinear los elementos a la izquierda */
+    text-align: left; /* Cambiado para que el texto esté alineado a la izquierda */
     color: white;
 }
 
@@ -175,9 +175,9 @@ main {
 /* Reducir la separación entre los párrafos en .plugin-description */
 .plugin-description p {
     font-size: 1.2em;
-    margin-bottom: 10px;
-    text-align: justify;
-    max-width: 100%;
+    margin-bottom: 10px; /* Reduce la separación entre párrafos */
+    text-align: justify; /* Justifica el texto dentro de los párrafos */
+    max-width: 100%; /* Ajusta el ancho máximo del texto al contenedor */
 }
 
 /* Centrando la imagen en .plugin-description */
@@ -185,17 +185,11 @@ main {
     max-width: 80%;
     height: auto;
     margin-top: 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: block; /* Asegura que la imagen sea un bloque y no se alinee en línea */
+    margin-left: auto; /* Margen izquierdo automático para centrar */
+    margin-right: auto; /* Margen derecho automático para centrar */
 }
 
-.plugin-details img {
-    max-width: 100px;
-    margin-bottom: 15px;
-}
-
-/* Boton de volver */
 .back-button {
     display: inline-block;
     margin-top: 20px;
@@ -211,6 +205,13 @@ main {
 .back-button:hover {
     background-color: #0056b3;
 }
+
+.plugin-details img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+
 
 a {
     color: #bb86fc;
@@ -267,12 +268,14 @@ a:hover {
     overflow-wrap: break-word; /* Permite que las palabras largas se ajusten */
     word-wrap: break-word;
     word-break: break-word;
+    max-height: 400px; /* Altura máxima para mostrar contenido */
+    overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es demasiado grande */
 }
 
 .config-button, .messages-button {
     display: inline-block;
     margin-top: 20px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     background-color: #d400ff;
     color: white;
     border: none;
@@ -280,7 +283,6 @@ a:hover {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-
 .config-button:hover, .messages-button:hover {
     background-color: #8500a0;
 }
@@ -290,9 +292,29 @@ a:hover {
     .plugin-item {
         width: calc(50% - 20px);
     }
+
+    .plugin-container-plugin {
+        flex-direction: column;
+    }
+
+    .plugin-details, .plugin-description {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
     
+    .plugin-description img {
+        max-width: 100%;
+    }
+
     .config-section, .messages-section {
-        font-size: 7px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+        font-size: 14px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+        width: 100%;
+    }
+
+    footer {
+        font-size: 14px;
     }
 }
 
@@ -301,7 +323,12 @@ a:hover {
         width: 100%;
     }
 
+    .plugin-container-plugin {
+        flex-direction: column;
+    }
+
     .plugin-details, .plugin-description {
+        width: 100%;
         margin-left: 0;
         margin-right: 0;
         padding: 10px;
@@ -312,6 +339,11 @@ a:hover {
     }
 
     .config-section, .messages-section {
-        font-size: 6px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+        font-size: 12px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+        width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
     }
 }
