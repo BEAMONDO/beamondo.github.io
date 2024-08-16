@@ -60,3 +60,21 @@ function toggleMessages() {
 function goBack() {
     window.history.back();
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtén los botones de Config y Messages
+    const configButton = document.getElementById('configButton');
+    const messagesButton = document.getElementById('messagesButton');
+
+    // Obtén el contenedor principal
+    const pluginContainer = document.querySelector('.plugin-container-plugin');
+
+    // Función para cambiar el flex-direction a column
+    function changeToColumnLayout() {
+        pluginContainer.style.flexDirection = 'column';
+    }
+
+    // Añade el evento de click a los botones
+    configButton.addEventListener('click', changeToColumnLayout);
+    messagesButton.addEventListener('click', changeToColumnLayout);
+});

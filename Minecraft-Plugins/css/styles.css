@@ -59,8 +59,21 @@ main {
 
 .plugin-container-plugin {
     display: flex;
+    flex-direction: column; /* Configuración inicial para que todo esté en columna */
     flex-grow: 1;
     padding: 20px;
+}
+
+.plugin-container-row {
+    display: flex;
+    flex-direction: row; /* Hace que los elementos en este contenedor estén en fila */
+    gap: 20px; /* Espaciado entre los elementos */
+    margin-bottom: 20px; /* Espacio debajo de esta fila */
+}
+
+.config-section, .messages-section {
+    /* Estas secciones estarán debajo y tomarán todo el ancho disponible */
+    margin-bottom: 20px;
 }
 
 .plugin-item {
@@ -211,8 +224,6 @@ main {
     margin-bottom: 15px;
 }
 
-
-
 a {
     color: #bb86fc;
     text-decoration: none;
@@ -259,6 +270,7 @@ a:hover {
 /* Estilos para Configuración y Mensajes */
 .config-section, .messages-section {
     display: none;
+    width: 100%;
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -268,7 +280,7 @@ a:hover {
     overflow-wrap: break-word; /* Permite que las palabras largas se ajusten */
     word-wrap: break-word;
     word-break: break-word;
-    max-height: 400px; /* Altura máxima para mostrar contenido */
+    max-height: 300px; /* Altura máxima para mostrar contenido */
     overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es demasiado grande */
 }
 
@@ -303,18 +315,34 @@ a:hover {
         margin-right: 0;
         padding: 10px;
     }
-    
+
+    .plugin-description {
+        width: 55%;
+    }
+
     .plugin-description img {
         max-width: 100%;
     }
 
+    .plugin-details {
+        width: 45%;
+    }
+
+    .plugin-details h2{
+        font-size: 20px;
+    }
+
+    .plugin-details h4{
+        font-size: 12px;
+    }
+
     .config-section, .messages-section {
-        font-size: 14px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+        font-size: 10px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
         width: 100%;
     }
 
     footer {
-        font-size: 14px;
+        font-size: 10px;
     }
 }
 
@@ -334,12 +362,28 @@ a:hover {
         padding: 10px;
     }
 
+    .plugin-description {
+        width: 55%;
+    }
+
     .plugin-description img {
         max-width: 100%;
     }
 
+    .plugin-details {
+        width: 45%;
+    }
+
+    .plugin-details h2{
+        font-size: 20px;
+    }
+
+    .plugin-details h4{
+        font-size: 12px;
+    }
+
     .config-section, .messages-section {
-        font-size: 12px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+        font-size: 9px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
         width: 100%;
     }
 
