@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleMOTD - Plugin Details</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <!--<header>
@@ -12,29 +13,103 @@
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/SimpleMOTD.jpg" alt="SimpleMOTD">
-            <h2>SimpleMOTD [1.8 - 1.21]</h2>
-            <h4>Version: 2.0.1</h4>
-            <a href="https://www.spigotmc.org/resources/simplemotd-1-8-1-21.112452/" class="download-link">Download</a>
-            <button onclick="goBack()" class="back-button">Back</button>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/SimpleMOTD.jpg" alt="SimpleMOTD">
+                <h2>SimpleMOTD</h2>
+                <h2>[1.8 - 1.21]</h2>
+                <br>
+                <h4>Version: 2.0.1</h4>
+                <a href="https://www.spigotmc.org/resources/simplemotd-1-8-1-21.112452/" class="download-link">Download</a>
+                <button onclick="goBack()" class="back-button">Back</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuration</button>
+                <button id="messagesButton" onclick="toggleMessages()" class="messages-button">Messages</button>
+            </div>
+            
+            <div class="plugin-description">
+                <p></p>
+                <img src="../images/en/simplemotd comandos y permisos.png" alt="Descripción de SimpleMOTD">
+            </div>
         </div>
-        
-        <div class="plugin-description">
-            <h1>SimpleMOTD</h1>
-            <p></p>
-            <img src="../images/en/simplemotd comandos y permisos.png" alt="Descripción de SimpleMOTD">
+
+        <!-- Nueva sección de configuración -->
+        <div id="config-section" class="config-section">
+<pre>
+# ################################################################################## #
+# +--------------------------------------------------------------------------------+ #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |             __          __        ___                __  _____  __             | #
+# |            /__` | |\/| |__) |    |_            |\/| /  \   |   |  \            | #
+# |            .__/ | |  | |    |___ |___          |  | \__/   |   |__/            | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |      Youtube:    www.youtube.com/@davigamer1614                                | #
+# |      Github:     https://github.com/BEAMONDO/Minecraft-Plugin-SimpleMOTD       | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# +--------------------------------------------------------------------------------+ #
+# ################################################################################## #
+
+
+#   update-message: enable or disable the update message when enter in server
+#   no-argument-message: enable or disable the command message "/sm" if it not have any argument
+#   no-perm-message: enable or disable message when use a command and don`t have permission
+#   show-icon: enable or disable icon
+#   show-motd: enable or disable motd
+#   maintenance-mode: enable or disable maintenance mode
+#   maintenance-mode-kick: kick player who try join the server when it is in maintenance mode
+
+
+Config:
+  update-message: true
+  no-argument-message: true
+  no-perm-message: true
+  show-icon: true
+  show-motd: true
+  maintenance-mode: false
+  maintenance-mode-kick: true
+</pre>
+        </div>
+
+        <!-- Nueva sección de mensajes -->
+        <div id="messages-section" class="messages-section">
+<pre>
+Messages:
+  motd:
+    line1: "                     §e§lSimpleMOTD"
+    line2: "            §aJoin Now §7| §cSIMPLE MOTD"
+  maintenance: 
+    line1: "                   §c§lMaintenance"
+    line2: "           §6Server is under maintenance"
+    kick-message: "§4§lMaintenance mode is currently on"
+    kick-bypass: "&4Server is under maintenance, &6may not work correctly"
+  icon-error:
+    invalid-image: 'All of your server icons must be 64x64 and end in .png! Those who do not comply will not be used!'
+    retry: 'The icons directory is missing! Trying to create one now...'
+  help:
+  - '&b<-----------------&aCOMMANDS&b----------------->'
+  - '&e/simplemotd help &7Show this message'
+  - '&e/simplemotd version &7Show plugin version'
+  - '&e/simplemotd reload &7Reload plugin'
+  - '&e/simplemotd plugin &7Show plugin download link'
+  reload: '%plugin% &aThe plugin has been reloaded'
+  version: '%plugin% &aPlugin version: &b%version%'
+  author: '%plugin% &aPlugin author: &b%author%'
+  command-no-argument: '%plugin% &fUse &e/simplemotd help &fto see the command list'
+  no-perm: '%plugin% &cYou don`t have permission to use that command'
+  console-error: 'You can`t use that command in console'
+  update-checker: '%plugin% &bThere is a new version &e(&f%latestversion%&e)&b. Download it here: &7%link%'
+</pre>
         </div>
     </main>
-
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. All rights reserved.
     </footer>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>

@@ -280,7 +280,7 @@ a:hover {
     overflow-wrap: break-word; /* Permite que las palabras largas se ajusten */
     word-wrap: break-word;
     word-break: break-word;
-    max-height: 300px; /* Altura máxima para mostrar contenido */
+    max-height: 400px; /* Altura máxima para mostrar contenido */
     overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es demasiado grande */
 }
 

@@ -13,25 +13,28 @@
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/SimpleHeal.jpeg" alt="SimpleHeal">
-            <h2>SimpleHeal [1.8 - 1.21]</h2>
-            <h4>Version: 3.0.1</h4>
-            <a href="https://www.spigotmc.org/resources/simpleheal-1-8-1-21.108687/" class="download-link">Download</a>
-            <button onclick="goBack()" class="back-button">Back</button>
-            <button onclick="toggleConfig()" class="config-button">Configuration</button>
-            <button onclick="toggleMessages()" class="messages-button">Messages</button>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/SimpleHeal.jpeg" alt="SimpleHeal">
+                <h2>SimpleHeal</h2>
+                <h2>[1.8 - 1.21]</h2>
+                <br>
+                <h4>Version: 3.0.1</h4>
+                <a href="https://www.spigotmc.org/resources/simpleheal-1-8-1-21.108687/" class="download-link">Download</a>
+                <button onclick="goBack()" class="back-button">Back</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuration</button>
+                <button id="messagesButton" onclick="toggleMessages()" class="messages-button">Messages</button>
+            </div>
+
+            <div class="plugin-description">
+                <!--<p>This plugin allows you to heal yourself or other players using the /heal command or /heal &lt;player&gt;. It's easy to use and perfect for servers where health management is important.</p>
+                <p>You can also configure the cost of using it when using Vault and Essentials. Additionally, you can change the cooldown time required before a player can use the /heal command again.</p>
+                <p>You can enable or disable the payment option and the cooldown option before using the /heal command again.</p>
+                <p>All messages can be customized.</p>-->
+                <img src="../images/en/simpleheal comandos y permisos.png" alt="SimpleHeal Description">
+            </div>
         </div>
 
-        <div class="plugin-description">
-            <!--<h1>SimpleHeal</h1>
-            <p>This plugin allows you to heal yourself or other players using the /heal command or /heal &lt;player&gt;. It's easy to use and perfect for servers where health management is important.</p>
-            <p>You can also configure the cost of using it when using Vault and Essentials. Additionally, you can change the cooldown time required before a player can use the /heal command again.</p>
-            <p>You can enable or disable the payment option and the cooldown option before using the /heal command again.</p>
-            <p>All messages can be customized.</p>-->
-            <img src="../images/en/simpleheal comandos y permisos.png" alt="SimpleHeal Description">
-        </div>
-        
         <!-- Nueva sección de configuración -->
         <div id="config-section" class="config-section">
 <pre>
@@ -107,7 +110,7 @@ Messages:
 </pre>
         </div>
     </main>
-    <br><br><br><br>
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. All rights reserved.
     </footer>

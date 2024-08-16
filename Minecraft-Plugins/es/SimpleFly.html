@@ -13,22 +13,24 @@
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/SimpleFly.jpeg" alt="SimpleFly">
-            <h2>SimpleFly [1.8 - 1.21]</h2>
-            <h4>Versión: 2.0.1</h4>
-            <a href="https://www.spigotmc.org/resources/simplefly-1-8-1-21.111056/" class="download-link">Descargar</a>
-            <button onclick="goBack()" class="back-button">Volver</button>
-            <button onclick="toggleConfig()" class="config-button">Configuración</button>
-            <button onclick="toggleMessages()" class="messages-button">Mensajes</button>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/SimpleFly.jpeg" alt="SimpleFly">
+                <h2>SimpleFly</h2>
+                <h2>[1.8 - 1.21]</h2>
+                <br>
+                <h4>Versión: 2.0.1</h4>
+                <a href="https://www.spigotmc.org/resources/simplefly-1-8-1-21.111056/" class="download-link">Descargar</a>
+                <button onclick="goBack()" class="back-button">Volver</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuración</button>
+                <button id="messagesButton" onclick="toggleMessages()" class="messages-button">Mensajes</button>
+            </div>
+            
+            <div class="plugin-description">
+                <p></p>
+                <img src="../images/es/simplefly comandos y permisos.png" alt="Descripción de SimpleFly">
+            </div>
         </div>
-        
-        <div class="plugin-description">
-            <h1>SimpleFly</h1>
-            <p></p>
-            <img src="../images/es/simplefly comandos y permisos.png" alt="Descripción de SimpleFly">
-        </div>
-        <br><br><br>
 
         <!-- Nueva sección de configuración -->
         <div id="config-section" class="config-section">
@@ -100,7 +102,7 @@ Messages:
 </pre>
         </div>
     </main>
-
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. Todos los derechos reservados.
     </footer>

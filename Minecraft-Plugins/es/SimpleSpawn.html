@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleSpawn - Detalles del Plugin</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <!--<header>
@@ -12,29 +13,100 @@
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/SimpleSpawn.jpg" alt="SimpleSpawn">
-            <h2>SimpleSpawn [1.8 - 1.21]</h2>
-            <h4>Versión: 2.0.2</h4>
-            <a href="https://www.spigotmc.org/resources/simplespawn-1-8-1-21.111086/" class="download-link">Descargar</a>
-            <button onclick="goBack()" class="back-button">Volver</button>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/SimpleSpawn.jpg" alt="SimpleSpawn">
+                <h2>SimpleSpawn [1.8 - 1.21]</h2>
+                <h4>Versión: 2.0.2</h4>
+                <a href="https://www.spigotmc.org/resources/simplespawn-1-8-1-21.111086/" class="download-link">Descargar</a>
+                <button onclick="goBack()" class="back-button">Volver</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuración</button>
+                <button id="messagesButton" onclick="toggleMessages()" class="messages-button">Mensajes</button>
+            </div>
+            
+            <div class="plugin-description">
+                <p></p>
+                <img src="../images/es/simplespawn comandos y permisos.png" alt="Descripción de SimpleSpawn">
+            </div>
         </div>
-        
-        <div class="plugin-description">
-            <h1>SimpleSpawn</h1>
-            <p></p>
-            <img src="../images/es/simplespawn comandos y permisos.png" alt="Descripción de SimpleSpawn">
+
+        <!-- Nueva sección de configuración -->
+        <div id="config-section" class="config-section">
+<pre>
+# ################################################################################## #
+# +--------------------------------------------------------------------------------+ #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |                __          __        ___       __   __   __                    | #
+# |               /__` | |\/| |__) |    |_        /__` |__) |__| \    / |\ |       | #
+# |               .__/ | |  | |    |___ |___      .__/ |    |  |  \/\/  | \|       | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |      Youtube:    www.youtube.com/@davigamer1614                                | #
+# |      Github:     https://github.com/BEAMONDO/Minecraft-Plugin-SimpleSpawn      | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# +--------------------------------------------------------------------------------+ #
+# ################################################################################## #
+
+
+#   update-message: activar o desactivar el mensaje de actualizacion disponible al entrar al servidor
+#   no-argument-message: activar o desactivar el mensaje del comando "/ss" en el caso de no tener ningun argumento
+#   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
+
+#   setspawn-message: activar o desactivar el mensaje del comando "/setspawn"
+#   spawn-message: activar o desactivar el mensaje del comando "/spawn"
+#   pay-to-spawn: activar o desactivar la opcion de pagar para ir al spawn (si se activa es necesario el plugin Vault y EssentialsX)
+#   spawn-price: cantidad a pagar al usar "/spawn" si la opcion (pay-to-spawn) esta activa
+
+
+Config:
+  update-message: true
+  no-argument-message: true
+  no-perm-message: true
+  setspawn-message: true
+  spawn-message: true
+  pay-to-spawn: false
+  spawn-price: 1000
+</pre>
+        </div>
+
+        <!-- Nueva sección de mensajes -->
+        <div id="messages-section" class="messages-section">
+<pre>
+Messages:
+  spawn:
+    setspawn: '%plugin% &aEl spawn ha sido colocado'
+    no-exist: '%plugin% &cEl spawn no existe'
+    teleport: '%plugin% &aTe has transportado al spawn'
+    teleport-others: '%plugin% &aHas transportado a &6%target% &aal spawn'
+    no-enought-money: '%plugin% &cNo tienes suficiente dinero para transportarte al spawn'
+    no-enought-money-others: '%plugin% &cNo tienes suficiente dinero para transportar a &6%target% &cal spawn'
+  help:
+  - '&b<-----------------&aCOMMANDS&b----------------->'
+  - '&e/ss help &7Muestra este mensaje'
+  - '&e/ss version &7Version del plugin'
+  - '&e/ss reload &7Recargar el plugin'
+  - '&e/ss plugin &7Muestra el link de descarga del plugin'
+  - '&e/setspawn &7Crea el spawn'
+  - '&e/spawn &7Te transporta al spawn'
+  - '&e/spawn &gt;player&gt; &7Transporta a otros al spawn'
+  reload: '%plugin% &aEl plugin ha sido recargado'
+  version: '%plugin% &aVersion &b%version%'
+  command-no-argument: '%plugin% &fUsa &e/ss help &fpara ver la lista de comandos'
+  no-perm: '%plugin% &cNo tienes permiso para ejecutar ese comando'
+  console-error: 'No puedes ejecutar ese comando desde la consola'
+  update-checker: '%plugin% &bHay una nueva version &e(&f%latestversion%&e)&b. Descargala aqui: &7https://www.spigotmc.org/resources/111086/'
+</pre>
         </div>
     </main>
-
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. Todos los derechos reservados.
     </footer>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>

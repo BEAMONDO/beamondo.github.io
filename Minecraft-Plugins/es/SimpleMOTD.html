@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleMOTD - Detalles del Plugin</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <!--<header>
@@ -12,29 +13,103 @@
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/SimpleMOTD.jpg" alt="SimpleMOTD">
-            <h2>SimpleMOTD [1.8 - 1.21]</h2>
-            <h4>Versión: 2.0.1</h4>
-            <a href="https://www.spigotmc.org/resources/simplemotd-1-8-1-21.112452/" class="download-link">Descargar</a>
-            <button onclick="goBack()" class="back-button">Volver</button>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/SimpleMOTD.jpg" alt="SimpleMOTD">
+                <h2>SimpleMOTD</h2>
+                <h2>[1.8 - 1.21]</h2>
+                <br>
+                <h4>Versión: 2.0.1</h4>
+                <a href="https://www.spigotmc.org/resources/simplemotd-1-8-1-21.112452/" class="download-link">Descargar</a>
+                <button onclick="goBack()" class="back-button">Volver</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuración</button>
+                <button id="messagesButton" onclick="toggleMessages()" class="messages-button">Mensajes</button>
+            </div>
+            
+            <div class="plugin-description">
+                <p></p>
+                <img src="../images/es/simplemotd comandos y permisos.png" alt="Descripción de SimpleMOTD">
+            </div>
         </div>
-        
-        <div class="plugin-description">
-            <h1>SimpleMOTD</h1>
-            <p></p>
-            <img src="../images/es/simplemotd comandos y permisos.png" alt="Descripción de SimpleMOTD">
+
+        <!-- Nueva sección de configuración -->
+        <div id="config-section" class="config-section">
+<pre>
+# ################################################################################## #
+# +--------------------------------------------------------------------------------+ #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |             __          __        ___                __  _____  __             | #
+# |            /__` | |\/| |__) |    |_            |\/| /  \   |   |  \            | #
+# |            .__/ | |  | |    |___ |___          |  | \__/   |   |__/            | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |      Youtube:    www.youtube.com/@davigamer1614                                | #
+# |      Github:     https://github.com/BEAMONDO/Minecraft-Plugin-SimpleMOTD       | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# +--------------------------------------------------------------------------------+ #
+# ################################################################################## #
+
+
+#   update-message: activar o desactivar el mensaje de actualizacion disponible al entrar al servidor
+#   no-argument-message: activar o desactivar el mensaje del comando "/sm" en el caso de no tener ningun argumento
+#   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
+#   show-icon: activar o desactivar icono
+#   show-motd: activar o desactivar motd
+#   maintenance-mode: activar o desactivar el modo mantenimiento
+#   maintenance-mode-kick: echa a un jugador que intente entrar cuando esta el modo mantenimiento activado
+
+
+Config:
+  update-message: true
+  no-argument-message: true
+  no-perm-message: true
+  show-icon: true
+  show-motd: true
+  maintenance-mode: false
+  maintenance-mode-kick: true
+</pre>
+        </div>
+
+        <!-- Nueva sección de mensajes -->
+        <div id="messages-section" class="messages-section">
+<pre>
+Messages:
+  motd:
+    line1: "                     §e§lSimpleMOTD"
+    line2: "           §aEntra Ahora §7| §cSIMPLE MOTD"
+  maintenance: 
+    line1: "                 §c§lMantenimiento"
+    line2: "         §6El servidor esta en mantenimiento"
+    kick-message: "§4§lEl servidor esta en mantenimiento"
+    kick-bypass: "&4El servidor esta en mantenimiento, &6puede que algo no funcione correctamente"
+  icon-error:
+    invalid-image: 'Todos los iconos del servidor deben ser de 64x64 y terminar en .png! Los que no lo cumplan no seran usados!'
+    retry: 'La carpeta ServerIcon no existe! Intentando crearla ahora...'
+  help:
+  - '&b<-----------------&aCOMANDOS&b----------------->'
+  - '&e/simplemotd help &7Muestra este mensaje'
+  - '&e/simplemotd version &7Version del plugin'
+  - '&e/simplemotd reload &7Recargar el plugin'
+  - '&e/simplemotd plugin &7Muestra el link de descarga del plugin'
+  reload: '%plugin% &aEl plugin ha sido recargado'
+  version: '%plugin% &aVersion &b%version%'
+  author: '%plugin% &aAutor: &b%author%'
+  command-no-argument: '%plugin% &fUsa &e/simplemotd help &fpara ver la lista de comandos'
+  no-perm: '%plugin% &cNo tienes permiso para ejecutar ese comando'
+  console-error:  No puedes ejecutar ese comando desde la consola
+  update-checker: '%plugin% &bHay una nueva version &e(&f%latestversion%&e)&b. Descargala aqui: &7%link%'
+</pre>
         </div>
     </main>
-
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. Todos los derechos reservados.
     </footer>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
