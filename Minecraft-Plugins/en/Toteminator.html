@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toteminator - Plugin Details</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <!--<header>
@@ -12,29 +13,95 @@
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/Toteminator.jpg" alt="Toteminator">
-            <h2>Toteminator [1.11 - 1.21]</h2>
-            <h4>Version: 3.1.1</h4>
-            <a href="https://www.spigotmc.org/resources/toteminator-1-11-1-21.117878/" class="download-link">Download</a>
-            <button onclick="goBack()" class="back-button">Back</button>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/Toteminator.jpg" alt="Toteminator">
+                <h2>Toteminator</h2>
+                <h2>[1.11 - 1.21]</h2>
+                <br>
+                <h4>Version: 3.2.1</h4>
+                <a href="https://www.spigotmc.org/resources/toteminator-1-11-1-21.117878/" class="download-link">Download</a>
+                <button onclick="goBack()" class="back-button">Back</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuration</button>
+            </div>
+            
+            <div class="plugin-description">
+                <p></p>
+                <img src="../images/en/toteminator comandos y permisos.png" alt="Descripción de Toteminator">
+            </div>
         </div>
-        
-        <div class="plugin-description">
-            <h1>Toteminator</h1>
-            <p></p>
-            <img src="../images/en/toteminator comandos y permisos.png" alt="Descripción de Toteminator">
+
+        <!-- Nueva sección de configuración -->
+        <div id="config-section" class="config-section">
+<pre>
+config:
+
+  # List of allowed worlds in which the plugin works
+  allowed-worlds:
+    - world
+    - world_nether
+    - world_the_end
+
+  # Enable/Disable the keep effects option
+  keep-effects: true
+
+  # Enable/Disable the new version available message (update-message)
+  update-checker: true
+
+  # Variables: %plugin%, %version%, %latestversion%, %link%
+  update-message: '%plugin% &bNew version available &e(&f%latestversion%&e)&b. Download it here: &7%link%'
+
+messages:
+
+  # Variables: NA
+  help:
+    - '&b<-----------------&aCOMMANDS TOTEMINATOR&b----------------->'
+    - '&e/toteminator help &7Show this message'
+    - '&e/toteminator reload &7Reload plugin config'
+    - '&e/toteminator version &7Show plugin version'
+    - '&e/toteminator author &7Show plugin author'
+    - '&e/toteminator permissions &7Show plugin permission list'
+    - '&e/toteminator plugin &7Show plugin download link'
+    - '&e/toteminator totem &gt;enable/disable&gt; &7Enable/Disable keep effects funcion'
+
+  # Variables: %plugin%
+  reload: '%plugin% &aThe plugin has been reloaded'
+
+  # Variables: %plugin%, %version%, %latestversion%
+  version: '%plugin% &aPlugin version: &b%version%'
+
+  # Variables: %plugin%, %author%
+  author: '%plugin% &aPlugin author: &b%author%'
+
+  # Variables: NA
+  permissions:
+    - '&b<-----------------&aPERMISSIONS TOTEMINATOR&b----------------->'
+    - '&etoteminator.* &7OP permissions'
+    - '&etoteminator.help &7Allow to use &e/toteminator help'
+    - '&etoteminator.reload &7Allow to use &e/toteminator reload'
+    - '&etoteminator.version &7Allow to use &e/toteminator version'
+    - '&etoteminator.author &7Allow to use &e/toteminator author'
+    - '&etoteminator.plugin &7Allow to use &e/toteminator plugin'
+    - '&etoteminator.permissions &7Allow to use &e/toteminator permissions'
+    - '&etoteminator.totem &7Allow to use &e/toteminator totem &gt;enable/disable&gt;'
+    - '&etoteminator.updatechecker &7Allow receive message if there is an update'
+    - '&etoteminator.use &7 Allow to keep effects when use a totem'
+
+  # Variables: %plugin%
+  command-no-argument: '%plugin% &7Use &e/toteminator help &7to see the command list'
+
+  # Variables: %plugin%
+  no-perm: '%plugin% &cYou don`t have permission to use that command'
+
+  # Variables: NA
+  console-error: 'You can`t use that command in console'
+</pre>
         </div>
     </main>
-
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. All rights reserved.
     </footer>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
