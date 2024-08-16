@@ -22,6 +22,17 @@ header {
     font-size: 24px;
 }
 
+footer {
+    background-color: #646464;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
 .language-selector {
     position: absolute;
     top: 10px;
@@ -32,13 +43,6 @@ header {
 .language-selector select {
     padding: 5px;
     font-size: 14px;
-}
-
-.theme-switch{
-    position: absolute;
-    top: 40px;
-    right: 20px;
-    font-weight: bold;
 }
 
 main {
@@ -186,6 +190,12 @@ main {
     margin-right: auto;
 }
 
+.plugin-details img {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+/* Boton de volver */
 .back-button {
     display: inline-block;
     margin-top: 20px;
@@ -202,22 +212,6 @@ main {
     background-color: #0056b3;
 }
 
-.plugin-details img {
-    max-width: 100px;
-    margin-bottom: 15px;
-}
-
-footer {
-    background-color: #646464;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-}
-
 a {
     color: #bb86fc;
     text-decoration: none;
@@ -226,37 +220,6 @@ a {
 
 a:hover {
     color: #8a2be2;
-}
-
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .plugin-item {
-        width: calc(50% - 20px);
-    }
-    
-    .config-section, .messages-section {
-        font-size: 14px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    .plugin-item {
-        width: 100%;
-    }
-
-    .plugin-details, .plugin-description {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 10px;
-    }
-
-    .plugin-description img {
-        max-width: 100%;
-    }
-
-    .config-section, .messages-section {
-        font-size: 12px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
-    }
 }
 
 /* Estilos para la imagen grande */
@@ -309,7 +272,7 @@ a:hover {
 .config-button, .messages-button {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     background-color: #d400ff;
     color: white;
     border: none;
@@ -320,4 +283,35 @@ a:hover {
 
 .config-button:hover, .messages-button:hover {
     background-color: #8500a0;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .plugin-item {
+        width: calc(50% - 20px);
+    }
+    
+    .config-section, .messages-section {
+        font-size: 7px; /* Reducir el tamaño de fuente en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .plugin-item {
+        width: 100%;
+    }
+
+    .plugin-details, .plugin-description {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .plugin-description img {
+        max-width: 100%;
+    }
+
+    .config-section, .messages-section {
+        font-size: 6px; /* Reducir aún más el tamaño de fuente en pantallas muy pequeñas */
+    }
 }

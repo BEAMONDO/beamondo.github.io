@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SimpleFly - Detalles del Plugin</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/scripts.js" defer></script>
 </head>
 <body>
     <!--<header>
@@ -18,6 +19,8 @@
             <h4>Versión: 2.0.1</h4>
             <a href="https://www.spigotmc.org/resources/simplefly-1-8-1-21.111056/" class="download-link">Descargar</a>
             <button onclick="goBack()" class="back-button">Volver</button>
+            <button onclick="toggleConfig()" class="config-button">Configuración</button>
+            <button onclick="toggleMessages()" class="messages-button">Mensajes</button>
         </div>
         
         <div class="plugin-description">
@@ -25,16 +28,81 @@
             <p></p>
             <img src="../images/es/simplefly comandos y permisos.png" alt="Descripción de SimpleFly">
         </div>
+
+        <!-- Nueva sección de configuración -->
+        <div id="config-section" class="config-section">
+<pre>
+# ################################################################################## #
+# +--------------------------------------------------------------------------------+ #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |                     __          __        ___       __                         | #
+# |                    /__` | |\/| |__) |    |_        |_  |    \/                 | #
+# |                    .__/ | |  | |    |___ |___      |   |___ /                  | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# |      Youtube:    www.youtube.com/@davigamer1614                                | #
+# |      Github:     https://github.com/BEAMONDO/Minecraft-Plugin-SimpleFly        | #
+# |                                                                                | #
+# |                                                                                | #
+# |                                                                                | #
+# +--------------------------------------------------------------------------------+ #
+# ################################################################################## #
+
+
+#   update-message: activar o desactivar el mensaje de actualizacion disponible al entrar al servidor
+#   no-argument-message: activar o desactivar el mensaje del comando "/sf" en el caso de no tener ningun argumento
+#   no-perm-message: activar o desactivar el mensaje para cuando usas un comando y no tienes permiso
+
+#   fly-message: activar o desactivar el mensaje del comando "/fly"
+#   pay-to-fly: activar o desactivar la opcion de pagar para volar (si se activa es necesario el plugin Vault y EssentialsX)
+#   fly-price: cantidad a pagar al usar "/fly" si la opcion (pay-to-fly) esta activa
+
+
+Config:
+  update-message: true
+  no-argument-message: true
+  no-perm-message: true
+  fly-message: true
+  pay-to-fly: false
+  fly-price: 1000
+</pre>
+        </div>
+
+        <!-- Nueva sección de mensajes -->
+        <div id="messages-section" class="messages-section">
+<pre>
+Messages:
+  fly:
+    enabled: '%plugin% &aFly ha sido activado'
+    disabled: '%plugin% &cFly ha sido desactivado'
+    enabled-others: '%plugin% &aHas activado el fly a &6%target%'
+    disabled-others: '%plugin% &Has desactivado el fly a &6%target%'
+    no-enought-money: '%plugin% &cNo tienes suficiente dinero para volar'
+    no-enought-money-others: '%plugin% &cNo tienes suficiente dinero para hacer volar a &6%target%'
+  help:
+  - '&b<-----------------&aCOMANDOS&b----------------->'
+  - '&e/sf help &7Muestra este mensaje'
+  - '&e/sf version &7Version del plugin'
+  - '&e/sf reload &7Recargar el plugin'
+  - '&e/sf plugin &7Muestra el link de descarga del plugin'
+  - '&e/fly &7Activa o desactiva fly'
+  - '&e/fly &lt;player&lt; &7Activa o desactiva flyfly para otro jugador'
+  reload: '%plugin% &aEl plugin ha sido recargado'
+  version: '%plugin% &aVersion &b%version%'
+  command-no-argument: '%plugin% &fUsa &e/sf help &fpara ver la lista de comandos'
+  no-perm: '%plugin% &cNo tienes permiso para ejecutar ese comando'
+  console-error: 'No puedes ejecutar ese comando desde la consola'
+  update-checker: '%plugin% &bHay una nueva version &e(&f%latestversion%&e)&b. Descargala aqui: &7https://www.spigotmc.org/resources/111056/'
+</pre>
+        </div>
     </main>
 
     <footer>
         © 2024 - BEAMONDO. Todos los derechos reservados.
     </footer>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
