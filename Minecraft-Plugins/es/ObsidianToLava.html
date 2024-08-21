@@ -1,40 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsidianToLava - Detalles del Plugin</title>
-    <link rel="stylesheet" href="../css/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ObsidianToLava - Detalles del Plugin</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="../js/scripts.js" defer></script>
+    </head>
 <body>
     <!--<header>
         <h1>ObsidianToLava</h1>
     </header>-->
 
     <main class="plugin-container-plugin">
-        <div class="plugin-details">
-            <img class="image-resize" src="../images/ObsidianToLava.jpg" alt="ObsidianToLava">
-            <h2>ObsidianToLava [1.8 - 1.21]</h2>
-            <h4>Versión: 3.3.2</h4>
-            <a href="https://www.spigotmc.org/resources/obsidiantolava-1-8-1-21.118073/" class="download-link">Descargar</a>
-            <button onclick="goBack()" class="back-button">Volver</button>
-        </div>
+        <div class="plugin-container-row">
+            <div class="plugin-details">
+                <img class="image-resize" src="../images/ObsidianToLava.jpg" alt="ObsidianToLava">
+                <h2>ObsidianToLava</h2>
+                <h2>[1.8 - 1.21]</h2>
+                <br>
+                <h4>Versión: 3.4.1</h4>
+                <a href="https://www.spigotmc.org/resources/obsidiantolava-1-8-1-21.118073/" class="download-link">Descargar</a>
+                <button onclick="goBack()" class="back-button">Volver</button>
+                <button id="configButton" onclick="toggleConfig()" class="config-button">Configuración</button>
+            </div>
         
-        <div class="plugin-description">
-            <h1>ObsidianToLava</h1>
-            <p></p>
-            <img src="../images/es/obsidiantolava comandos y permisos.png" alt="Descripción de ObsidianToLava">
+            <div class="plugin-description">
+                <p></p>
+                <img src="../images/es/obsidiantolava comandos y permisos.png" alt="Descripción de ObsidianToLava">
+            </div>
+        </div>
+
+        <!-- Nueva sección de configuración -->
+        <div id="config-section" class="config-section">
+<pre>
+config:
+
+  # Lista de mundos permitidos en los que funciona el plugin
+  allowed-worlds:
+    - world
+    - world_nether
+    - world_the_end
+
+  # Activar/Desactivar la opción de transformar obsidiana en lava
+  obsidian-to-lava: true
+
+  # Opcion de cooldown para transformar obsidiana en lava
+  cooldown:
+    enable: true
+    time: 60 # Tiempo en segundos
+    # Variables: %plugin%, %timereaming%
+    cooldown-message: '%plugin% &cDebes esperar &e%timereaming% &csegundos para transformar obsidiana en lava'
+
+  # Activar/Desactivar el mensaje de nueva versión disponible (update-message)
+  update-checker: true
+  # Variables: %plugin%, %version%, %latestversion%, %link%
+  update-message: '%plugin% &bNueva versión disponible &e(&f%latestversion%&e)&b. Descárgala aquí: &7%link%'
+
+messages:
+
+  # Variables: NA
+  help:
+    - '&b<-----------------&aCOMANDOS OBSIDIANTOLAVA&b----------------->'
+    - '&e/obsidiantolava help &7Muestra este mensaje'
+    - '&e/obsidiantolava reload &7Recargar el plugin'
+    - '&e/obsidiantolava version &7Version del plugin'
+    - '&e/obsidiantolava author &7Muestra el autor del plugin'
+    - '&e/obsidiantolava plugin &7Muestra el link de descarga del plugin'
+    - '&e/obsidiantolava permissions &7Muestra la lista de permisos del plugin'
+    - '&7Aliases: &eobsidiantolava&7, &eotl'
+
+  # Variables: %plugin%
+  reload: '%plugin% &aEl plugin ha sido recargado'
+
+  # Variables: %plugin%, %version%, %latestversion%
+  version: '%plugin% &aVersión: &b%version%'
+
+  # Variables: %plugin%, %author%
+  author: '%plugin% &aAutor: &b%author%'
+
+  # Variables: NA
+  permissions:
+    - '&b<-----------------&aPERMISOS OBSIDIANTOLAVA&b----------------->'
+    - '&eobsidiantolava.* &7Permisos de OP'
+    - '&eobsidiantolava.help &7Permite usar &e/obsidiantolava help'
+    - '&eobsidiantolava.reload &7Permite usar &e/obsidiantolava reload'
+    - '&eobsidiantolava.version &7Permite usar &e/obsidiantolava version'
+    - '&eobsidiantolava.author &7Permite usar &e/obsidiantolava author'
+    - '&eobsidiantolava.plugin &7Permite usar &e/obsidiantolava plugin'
+    - '&eobsidiantolava.permissions &7Permite usar &e/obsidiantolava permissions'
+    - '&eobsidiantolava.updatechecker &7Permite recibir mensajes si hay una actualizacion'
+    - '&eobsidiantolava.use &7Permite transformar obsidiana en lava'
+    - '&eobsidiantolava.cooldown.exempt &7Permite no esperar para transformar obsidiana en lava'
+
+  # Variables: %plugin%
+  command-no-argument: '%plugin% &7Usa &e/obsidiantolava help &7para ver la lista de comandos'
+
+  # Variables: %plugin%
+  no-perm: '%plugin% &No tienes permiso para ejecutar ese comando'
+
+  # Variables: %plugin%
+  console-error: '%plugin% &cNo puedes ejecutar ese comando desde la consola'
+</pre>
         </div>
     </main>
-
+    <br><br>
     <footer>
         © 2024 - BEAMONDO. Todos los derechos reservados.
     </footer>
 
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
 </body>
 </html>
